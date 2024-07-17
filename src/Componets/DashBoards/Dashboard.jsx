@@ -8,7 +8,7 @@ const Dashboard = () => {
   const handleLogout = async () => {
     await logout();
 
-    navigate("/"); // Redirect to homepage after logout
+    navigate("/login"); // Redirect to homepage after logout
   };
   return (
     <div className="">
@@ -33,6 +33,12 @@ const Dashboard = () => {
             {/* Sidebar content here */}
             <li>
               <NavLink to="/dashboard/profile"> Overview</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/sendMoney">Send-Money</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/cash-Out">Cash-Out</NavLink>
             </li>
             <li>
               <NavLink to="/dashboard/transactions"> Transactions</NavLink>

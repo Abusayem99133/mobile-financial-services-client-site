@@ -12,6 +12,7 @@ function Profile() {
         <>
           <p>Name: {currentUser.name}</p>
           <p>Email: {currentUser.email}</p>
+          <p>Balance: {currentUser?.balance}</p>
         </>
       ) : (
         <p>Loading...</p>
