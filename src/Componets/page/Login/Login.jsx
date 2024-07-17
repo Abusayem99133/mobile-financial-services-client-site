@@ -21,7 +21,7 @@ function Login() {
         title: "Success",
         text: "Login successful!",
       });
-      navigate("/profile");
+      navigate("/dashboard/profile");
     } else {
       Swal.fire({
         icon: "error",
