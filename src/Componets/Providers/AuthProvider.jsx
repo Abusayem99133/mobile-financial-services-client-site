@@ -1,14 +1,16 @@
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext();
+
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -53,16 +55,12 @@ const AuthProvider = ({ children }) => {
     setCurrentUser(null);
   };
 
-  const userInfo = {
+  const value = {
     currentUser,
     login,
     logout,
+    loading,
   };
-  return (
-    <AuthContext.Provider value={userInfo}>
-      {children && loading}
-    </AuthContext.Provider>
-  );
-};
 
-export default AuthProvider;
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};

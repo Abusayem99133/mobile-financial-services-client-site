@@ -3,6 +3,8 @@ import Main from "./Main";
 import Home from "./page/Home/Home";
 import Register from "./page/Registration/Register";
 import Login from "./page/Login/Login";
+import Profile from "./page/Profile/Profile";
+import PrivateRouter from "./Private/PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +25,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: "",
+        element: (
+          <PrivateRouter>
+            <Profile />
+          </PrivateRouter>
+        ),
       },
     ],
   },

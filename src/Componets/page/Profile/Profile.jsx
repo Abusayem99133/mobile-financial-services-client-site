@@ -9,6 +9,7 @@ function Profile() {
 
   const handleLogout = async () => {
     await logout();
+
     navigate("/"); // Redirect to homepage after logout
   };
 

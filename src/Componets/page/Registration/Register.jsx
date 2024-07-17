@@ -16,6 +16,7 @@ const Register = () => {
     const name = form.get("name");
     const email = form.get("email");
     const number = form.get("number");
+    const role = form.get("role");
     const pin = form.get("pin");
 
     // Validate pin length
@@ -33,6 +34,7 @@ const Register = () => {
       name,
       email,
       number,
+      role,
       pin,
     };
     console.log(userRegister);
@@ -108,9 +110,25 @@ const Register = () => {
                   required
                 />
               </div>
+              <label className="form-control w-full max-w-xs">
+                <div className="label">
+                  <span className="label-text">Role</span>
+                </div>
+                <select
+                  name="role"
+                  className="select input-bordered w-full max-w-xs"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Role
+                  </option>
+                  <option value="user">User</option>
+                  <option value="agent">Agent</option>
+                </select>
+              </label>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">PIN</span>
+                  <span className="label-text">5-Digit-PIN</span>
                 </label>
                 <div className="relative">
                   <input
